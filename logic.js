@@ -1,9 +1,12 @@
 // L’utente clicca su un bottone che genererà una griglia di gioco quadrata.
     // prima prendiamo un riferimento al HTML
-    const playButton = document.getElementById("play_game");
-
+    const playButtonEasy = document.getElementById("play_game_easy");
+    const playButtonMedium = document.getElementById("play_game_medium");
+    const playButtonHard = document.getElementById("play_game_hard");
     // evento "click" per creare i quadrati in HTML
-    playButton.addEventListener("click", addSquare);
+    playButtonEasy.addEventListener("click", addSquareEasy);   
+    playButtonMedium.addEventListener("click", addSquareMedium);
+    playButtonHard.addEventListener("click", addSquareHard);
 
 
 // Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
@@ -11,8 +14,8 @@
 
 // ! FUNCTIONS
 // creamo una funzione che generi  x quadrati all'interno del contenitore dentro MAIN
-function addSquare () {
-    
+function addSquareEasy () {
+
     // facciamo un loop dove posso genereare 100 quadrati
     for (let i = 1; i <= 100; i++) {
         // Prima generiamo un solo elemento
@@ -41,4 +44,65 @@ function addSquare () {
         }
     }
     
+}
+
+function addSquareMedium () {
+        // facciamo un loop dove posso genereare 100 quadrati
+        for (let i = 1; i <= 81; i++) {
+            // Prima generiamo un solo elemento
+            // prendiamo riferimento nel contaienr grande dentro Main
+            const bigContainer = document.getElementById("container")
+            
+            // creamo un elemento div da mettere dentro
+            const mediumSquare = document.createElement("div");
+            
+            // Ogni cella ha un numero progressivo, da 1 a 100.
+            mediumSquare.innerText = i;
+    
+            // Ci saranno quindi 10 caselle per ognuna delle 10 righe.
+            // gli diamo una classe 
+            mediumSquare.classList.add("medium_square")
+            
+                mediumSquare.addEventListener("click", blueSquare);
+    
+    
+            // appendiamo l'elemento creato dentro al div container
+            bigContainer.append(mediumSquare);
+    
+            function blueSquare () {
+                mediumSquare.classList.add("blue");
+                console.log(mediumSquare.innerText);
+            }
+        }
+}
+
+
+function addSquareHard () {
+    // facciamo un loop dove posso genereare 100 quadrati
+    for (let i = 1; i <= 49; i++) {
+        // Prima generiamo un solo elemento
+        // prendiamo riferimento nel contaienr grande dentro Main
+        const bigContainer = document.getElementById("container")
+        
+        // creamo un elemento div da mettere dentro
+        const hardSquare = document.createElement("div");
+        
+        // Ogni cella ha un numero progressivo, da 1 a 100.
+        hardSquare.innerText = i;
+
+        // Ci saranno quindi 10 caselle per ognuna delle 10 righe.
+        // gli diamo una classe 
+        hardSquare.classList.add("hard_square")
+        
+        hardSquare.addEventListener("click", blueSquare);
+
+
+        // appendiamo l'elemento creato dentro al div container
+        bigContainer.append(hardSquare);
+
+        function blueSquare () {
+            hardSquare.classList.add("blue");
+            console.log(hardSquare.innerText);
+        }
+    }
 }

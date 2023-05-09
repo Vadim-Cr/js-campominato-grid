@@ -53,6 +53,31 @@ main{
     font-size: 1rem;
     font-weight: bold;
 }
+.medium_square{
+    width: calc(100% /9);
+    height: calc(100% / 9);
+    background: black;
+    border: 1px solid red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.hard_square{
+    width: calc(100% /7);
+    height: calc(100% / 7);
+    background: black;
+    border: 1px solid red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
 
 .blue{
     background-color: cornflowerblue;
