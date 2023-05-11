@@ -83,6 +83,10 @@ main{
     background-color: cornflowerblue;
 }
 
+.red{
+    background-color: red;
+}
+
 footer{
     height: 10vh;
     display: flex;

@@ -106,3 +106,28 @@ function addSquareHard () {
         }
     }
 }
+
+
+// if i = array item (che è stata generata casualmente (16 numeri)) allora pusha la classe su quel div (ovvero che al click diventa rosso)
+
+let bombArr = [];
+
+for (let i = 1; i <= 16; i++) {
+    let randomNumber = Math.floor(Math.random() * 100) + 1;
+    // console.log(randomNumber);
+    bombArr.push(randomNumber);
+    console.log(bombArr);
+
+};
+
+for (let i = 1; i <= 16; i++) {
+    const pullValue = bombArr.splice(0, 1);
+    console.log(pullValue);
+};
+console.log(bombArr);
+
+if (bombArr === i) {
+    littleSquare.classList.add("red")
+}
+
+
